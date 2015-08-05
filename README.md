@@ -1,5 +1,6 @@
-# edge-docker-php
-Ubuntu 14.04 running Nginx 1.9 with Pagespeed and PHP 5.6. Plays nicely with [dredger](https://github.com/outeredge/dredger).
+# php-edge-nginx
+Docker file for edge servers running Nginx with modpagespeed and php fpm
+Original idea came from [David Windell] (https://github.com/davidwindell) 
 
 ## Configuration Options
 Most configuration can be done with environment variables. Here are the available options;
@@ -20,9 +21,3 @@ Most configuration can be done with environment variables. Here are the availabl
 | SMTP_PASS         | -       | Set SMTP password |
 | SMTP_CHECK_CERTS  | On      | Specifying *Off* will disable SMTP TLS certificate checks |
 
-## PHP extensions
-
-### Ioncube
-To enable ioncube, simply add the following line to your Dockerfile:
-
-`RUN sed -i 1i"zend_extension = ioncube.so" /usr/local/etc/php/php.ini`
